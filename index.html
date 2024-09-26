@@ -17,6 +17,65 @@
     <script defer src="./plugins/script.js"></script>
 </head>
 <body> 
+    <div id="loginContainer">
+        <form id="loginForm">
+            <div class="login-container">
+                <h2>Login</h2>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit">Login</button>
+                <br>
+                <a href="#" id="showQuizLink">I don't know the password</a>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Quiz Modal Popup -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+    
+            <!-- Step 1: Calendar input for the first question -->
+            <div id="step1" class="quiz-step">
+                <h3>When did we start dating?</h3>
+                <input type="date" id="quizDate" required>
+                <br>
+                <button id="quizSubmit1">Submit Answer</button>
+            </div>
+    
+            <!-- Step 2: First "I love you" location -->
+            <div id="step2" class="quiz-step" style="display: none;">
+                <h3>Where did I say I love you for the first time?</h3>
+                <input type="text" id="quizAnswer2" placeholder="Type your answer here" required>
+                <br>
+                <button id="quizSubmit2">Submit Answer</button>
+            </div>
+    
+            <!-- Step 3: Spilled drink on the beach -->
+            <div id="step3" class="quiz-step" style="display: none;">
+                <h3>What was the name of the drink I spilled on myself at the beach?</h3>
+                <input type="text" id="quizAnswer3" placeholder="Type your answer here" required>
+                <br>
+                <button id="quizSubmit3">Submit Answer</button>
+            </div>
+    
+            <!-- Step 4: Sky 28 reservation embarrassment -->
+            <div id="step4" class="quiz-step" style="display: none;">
+                <h3>What was the thing I said to reserve in Sky 28 and made a fool of myself?</h3>
+                <input type="text" id="quizAnswer4" placeholder="Type your answer here" required>
+                <br>
+                <button id="quizSubmit4">Submit Answer</button>
+            </div>
+    
+            <!-- Final Message -->
+            <p id="quizHint" style="display: none;">Princess name of Abdullah!</p>
+        </div>
+    </div>
+    <div id="mainContent" style="display: none;">
     <div class="loader">
         <span class="loader__element"></span>
         <span class="loader__element"></span>
@@ -59,6 +118,6 @@
     <canvas id="waterCanvas"></canvas>
 
     <p class="love">Love - Abdellah</p>
-
+    </div>
 </body>
 </html>

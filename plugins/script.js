@@ -8,7 +8,87 @@ document.addEventListener('DOMContentLoaded', function () {
         popupContainer.style.display = 'none';
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
+        // Simple validation (replace with actual validation logic)
+        if (username === 'Selma' && password === '3o3o3a') {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+        } else {
+            alert('Invalid credentials');
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('quizModal');
+    const showQuizLink = document.getElementById('showQuizLink');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    // Show quiz modal
+    showQuizLink.onclick = function (event) {
+        event.preventDefault();
+        modal.style.display = 'flex';
+    };
+
+    // Close quiz modal
+    closeBtn.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    // Step 1: Check dating date (16/02/2024)
+    document.getElementById('quizSubmit1').addEventListener('click', function () {
+        const dateInput = document.getElementById('quizDate').value;
+        if (dateInput === '2024-02-16') {
+            document.getElementById('step1').style.display = 'none';
+            document.getElementById('step2').style.display = 'block';
+        } else {
+            alert('Wrong date! Try again.');
+        }
+    });
+
+    // Step 2: Check location of first "I love you" (Anfa Park)
+    document.getElementById('quizSubmit2').addEventListener('click', function () {
+        const answer2 = document.getElementById('quizAnswer2').value.toLowerCase();
+        if (answer2 === 'anfa park') {
+            document.getElementById('step2').style.display = 'none';
+            document.getElementById('step3').style.display = 'block';
+        } else {
+            alert('Wrong location! Try again.');
+        }
+    });
+
+    // Step 3: Check spilled drink name (Exotic Tropical)
+    document.getElementById('quizSubmit3').addEventListener('click', function () {
+        const answer3 = document.getElementById('quizAnswer3').value.toLowerCase();
+        if (answer3 === 'exotic tropical') {
+            document.getElementById('step3').style.display = 'none';
+            document.getElementById('step4').style.display = 'block';
+        } else {
+            alert('Wrong drink! Try again.');
+        }
+    });
+
+    // Step 4: Check Sky 28 reservation fail word (vitrine)
+    document.getElementById('quizSubmit4').addEventListener('click', function () {
+        const answer4 = document.getElementById('quizAnswer4').value.toLowerCase();
+        if (answer4 === 'vitrine') {
+            document.getElementById('step4').style.display = 'none';
+            document.getElementById('quizHint').style.display = 'block';
+        } else {
+            alert('Wrong word! Try again.');
+        }
+    });
+});
 
 let heartRateInterval;
 
